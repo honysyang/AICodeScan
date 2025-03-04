@@ -1,4 +1,4 @@
-# CodeGuardian - Intelligent Code Audit System
+# AICodeScan - Intelligent Code Audit System
 
 CodeGuardian is an intelligent code audit system designed to analyze C code for potential vulnerabilities and provide detailed reports. It leverages both local and AI-based analysis to identify security risks and suggest mitigations.
 
