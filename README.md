@@ -13,8 +13,8 @@ CodeGuardian is an intelligent code audit system designed to analyze C code for 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yangzhongjie/codeguardian.git
-   cd codeguardian
+   git clone https://github.com/yangzhongjie/AICodeScan.git
+   cd AICodeScan
    ```
 
 2. **Install dependencies**:
