@@ -10,7 +10,7 @@ class Config:
     MITIGATIONS = BASE_DIR / "core/vulnerabilities/mitigations.json"
 
     # 配置文件
-    OPENAI_API_KEY = "sk-GsMQf3GV3KR0QTO6OP6Acnezun1jUh92bt9JV13AvoGyNynM"
+    OPENAI_API_KEY = "sk-******************"
     OPENAI_BASE_URL = "https://api.chatanywhere.tech/v1"
     
     # 新增代码长度限制
