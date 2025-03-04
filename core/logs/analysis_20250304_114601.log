@@ -1,0 +1,19 @@
+2025-03-04 11:46:01,891 - CodeGuardian - INFO - ==================================================
+2025-03-04 11:46:01,891 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-04 11:46:01,891 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250304_114601.log
+2025-03-04 11:46:01,891 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-04 11:46:01,891 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-04 11:46:01,891 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-04 11:46:01,891 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul2.c
+2025-03-04 11:46:01,895 - CodeGuardian - INFO - File loaded successfully. Size: 545 characters
+2025-03-04 11:46:01,895 - CodeGuardian - INFO - Extracted 4 functions
+2025-03-04 11:46:01,895 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 11:46:01,895 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 11:46:04,581 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 11:46:04,593 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-04 11:46:04,593 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 11:46:04,593 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 11:46:07,362 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 11:46:07,364 - ReportGen - INFO - 生成规范化报告...
+2025-03-04 11:46:07,368 - ReportGen - INFO - 生成Markdown摘要：summary.md
+2025-03-04 11:46:07,368 - ReportGen - INFO - 报告已保存至：D:\codeguardian\core\reports

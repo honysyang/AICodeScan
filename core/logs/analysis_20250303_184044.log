@@ -1,0 +1,57 @@
+2025-03-03 18:40:44,626 - CodeGuardian - INFO - ==================================================
+2025-03-03 18:40:44,627 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-03 18:40:44,629 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250303_184044.log
+2025-03-03 18:40:44,630 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-03 18:40:44,631 - VulnerabilityDB - INFO - Loaded 4 CWE patterns
+2025-03-03 18:40:44,632 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-03 18:40:44,632 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-03 18:40:44,634 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-03 18:40:44,636 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-03 18:40:44,638 - VulnerabilityDB - ERROR - 正则表达式解析失败: unbalanced parenthesis at position 52 (CWE: CWE-401, 模式: (malloc|calloc|realloc)\s*\$.*\$\s*;\s*(?!free\s*\()))
+2025-03-03 18:40:44,639 - VulnerabilityDB - ERROR - 正则表达式解析失败: unbalanced parenthesis at position 81 (CWE: CWE-404, 模式: (fopen|socket|pthread_create)\s*\$.*\$\s*;\s*(?!(fclose|close|pthread_join)\s*\()))
+2025-03-03 18:40:44,640 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 18:40:44,640 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 18:40:44,641 - CodeGuardian - ERROR - OpenAI API调用失败: type object 'Config' has no attribute 'OPENAI_BASE_URL'
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 149, in _analyze_with_openai
+    base_url=Config.OPENAI_BASE_URL
+             ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Config' has no attribute 'OPENAI_BASE_URL'
+2025-03-03 18:40:44,644 - CodeGuardian - ERROR - AI analysis failed: AI分析失败: type object 'Config' has no attribute 'OPENAI_BASE_URL'
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 149, in _analyze_with_openai
+    base_url=Config.OPENAI_BASE_URL
+             ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Config' has no attribute 'OPENAI_BASE_URL'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 139, in _call_ai_engine
+    return self._analyze_with_openai(prompt, code, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 166, in _analyze_with_openai
+    raise RuntimeError(f"AI分析失败: {str(e)}")
+RuntimeError: AI分析失败: type object 'Config' has no attribute 'OPENAI_BASE_URL'
+2025-03-03 18:40:44,650 - CodeGuardian - ERROR - 分析过程中发生错误: AI分析失败: type object 'Config' has no attribute 'OPENAI_BASE_URL'
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 149, in _analyze_with_openai
+    base_url=Config.OPENAI_BASE_URL
+             ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Config' has no attribute 'OPENAI_BASE_URL'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 44, in analyze
+    safety_data = self._safety_analysis(context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 107, in _safety_analysis
+    ai_report = self._call_ai_engine(
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 139, in _call_ai_engine
+    return self._analyze_with_openai(prompt, code, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 166, in _analyze_with_openai
+    raise RuntimeError(f"AI分析失败: {str(e)}")
+RuntimeError: AI分析失败: type object 'Config' has no attribute 'OPENAI_BASE_URL'

@@ -1,0 +1,57 @@
+2025-03-03 18:38:24,267 - CodeGuardian - INFO - ==================================================
+2025-03-03 18:38:24,268 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-03 18:38:24,268 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250303_183824.log
+2025-03-03 18:38:24,269 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-03 18:38:24,270 - VulnerabilityDB - INFO - Loaded 4 CWE patterns
+2025-03-03 18:38:24,270 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-03 18:38:24,271 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-03 18:38:24,271 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-03 18:38:24,273 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-03 18:38:24,274 - VulnerabilityDB - ERROR - 正则表达式解析失败: unbalanced parenthesis at position 52 (CWE: CWE-401, 模式: (malloc|calloc|realloc)\s*\$.*\$\s*;\s*(?!free\s*\()))
+2025-03-03 18:38:24,275 - VulnerabilityDB - ERROR - 正则表达式解析失败: unbalanced parenthesis at position 81 (CWE: CWE-404, 模式: (fopen|socket|pthread_create)\s*\$.*\$\s*;\s*(?!(fclose|close|pthread_join)\s*\()))
+2025-03-03 18:38:24,276 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 18:38:24,276 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 18:38:24,277 - CodeGuardian - ERROR - OpenAI API调用失败: type object 'Config' has no attribute 'OPENAI_API_KEY'
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 148, in _analyze_with_openai
+    api_key=Config.OPENAI_API_KEY,
+            ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Config' has no attribute 'OPENAI_API_KEY'
+2025-03-03 18:38:24,281 - CodeGuardian - ERROR - AI analysis failed: AI分析失败: type object 'Config' has no attribute 'OPENAI_API_KEY'
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 148, in _analyze_with_openai
+    api_key=Config.OPENAI_API_KEY,
+            ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Config' has no attribute 'OPENAI_API_KEY'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 139, in _call_ai_engine
+    return self._analyze_with_openai(prompt, code, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 166, in _analyze_with_openai
+    raise RuntimeError(f"AI分析失败: {str(e)}")
+RuntimeError: AI分析失败: type object 'Config' has no attribute 'OPENAI_API_KEY'
+2025-03-03 18:38:24,285 - CodeGuardian - ERROR - 分析过程中发生错误: AI分析失败: type object 'Config' has no attribute 'OPENAI_API_KEY'
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 148, in _analyze_with_openai
+    api_key=Config.OPENAI_API_KEY,
+            ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Config' has no attribute 'OPENAI_API_KEY'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 44, in analyze
+    safety_data = self._safety_analysis(context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 107, in _safety_analysis
+    ai_report = self._call_ai_engine(
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 139, in _call_ai_engine
+    return self._analyze_with_openai(prompt, code, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 166, in _analyze_with_openai
+    raise RuntimeError(f"AI分析失败: {str(e)}")
+RuntimeError: AI分析失败: type object 'Config' has no attribute 'OPENAI_API_KEY'

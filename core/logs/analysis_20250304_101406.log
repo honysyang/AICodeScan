@@ -1,0 +1,51 @@
+2025-03-04 10:14:06,973 - CodeGuardian - INFO - ==================================================
+2025-03-04 10:14:06,974 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-04 10:14:06,974 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250304_101406.log
+2025-03-04 10:14:06,974 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-04 10:14:06,975 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-04 10:14:06,975 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-04 10:14:06,975 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-04 10:14:06,976 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-04 10:14:06,977 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-04 10:14:06,978 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 10:14:06,978 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 10:14:09,545 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 10:14:09,553 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-04 10:14:09,553 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 10:14:09,554 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 10:14:12,285 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 10:14:12,286 - CodeGuardian - INFO - Generating visualizations...
+2025-03-04 10:14:12,759 - CodeGuardian - ERROR - 生成风险分布图失败: Failed to generate risk map: Attempting to convert data_frame of type <class 'list'> to pandas DataFrame, but Pandas is not installed. Convert it to supported dataframe type or install pandas.
+Traceback (most recent call last):
+  File "D:\codeguardian\.venv\Lib\site-packages\plotly\express\_core.py", line 1546, in build_dataframe
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\visualizer.py", line 34, in generate_risk_map
+    fig = px.treemap(
+          ^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\plotly\express\_chart_types.py", line 1812, in treemap
+    return make_figure(
+           ^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\plotly\express\_core.py", line 2477, in make_figure
+    args = build_dataframe(args, constructor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\plotly\express\_core.py", line 1568, in build_dataframe
+    raise NotImplementedError(msg)
+NotImplementedError: Attempting to convert data_frame of type <class 'list'> to pandas DataFrame, but Pandas is not installed. Convert it to supported dataframe type or install pandas.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 296, in _generate_visualization
+    risk_map = CodeVisualizer.generate_risk_map(report)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\visualizer.py", line 44, in generate_risk_map
+    raise RuntimeError(f"Failed to generate risk map: {str(e)}")
+RuntimeError: Failed to generate risk map: Attempting to convert data_frame of type <class 'list'> to pandas DataFrame, but Pandas is not installed. Convert it to supported dataframe type or install pandas.
+2025-03-04 10:14:12,759 - ReportGen - INFO - 生成规范化报告...
+2025-03-04 10:14:12,774 - ReportGen - INFO - 生成Markdown摘要：summary.md
+2025-03-04 10:14:12,776 - ReportGen - INFO - 报告已保存至：D:\codeguardian\core\reports

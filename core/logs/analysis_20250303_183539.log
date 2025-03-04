@@ -1,0 +1,32 @@
+2025-03-03 18:35:39,206 - CodeGuardian - INFO - ==================================================
+2025-03-03 18:35:39,206 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-03 18:35:39,207 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250303_183539.log
+2025-03-03 18:35:39,207 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-03 18:35:39,208 - VulnerabilityDB - INFO - Loaded 4 CWE patterns
+2025-03-03 18:35:39,209 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-03 18:35:39,209 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-03 18:35:39,210 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-03 18:35:39,213 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-03 18:35:39,214 - CodeGuardian - ERROR - 分析过程中发生错误: unbalanced parenthesis at position 52
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 44, in analyze
+    safety_data = self._safety_analysis(context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 105, in _safety_analysis
+    local_findings = self.vuln_db.scan_code(context.processed_content)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 287, in scan_code
+    if re.search(pattern['regex'], code, re.MULTILINE):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\re\__init__.py", line 177, in search
+    return _compile(pattern, flags).search(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\re\__init__.py", line 307, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\re\_compiler.py", line 743, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\re\_parser.py", line 977, in parse
+    raise source.error("unbalanced parenthesis")
+re.error: unbalanced parenthesis at position 52

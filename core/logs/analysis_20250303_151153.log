@@ -1,0 +1,21 @@
+2025-03-03 15:11:53,652 - CodeGuardian - INFO - ==================================================
+2025-03-03 15:11:53,652 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-03 15:11:53,652 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250303_151153.log
+2025-03-03 15:11:53,656 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-03 15:11:53,656 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-03 15:11:53,656 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-03 15:11:53,656 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-03 15:11:53,656 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-03 15:11:53,660 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-03 15:11:53,660 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 15:11:53,660 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 15:11:57,304 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 15:11:57,309 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-03 15:11:57,313 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 15:11:57,313 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 15:12:00,683 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 15:12:00,687 - CodeGuardian - ERROR - Graphviz检查失败: module 'graphviz.backend' has no attribute 'check_executable'
+2025-03-03 15:12:00,687 - CodeGuardian - WARNING - Graphviz不可用，跳过可视化生成。
+2025-03-03 15:12:00,687 - ReportGen - INFO - 生成规范化报告...
+2025-03-03 15:12:00,703 - ReportGen - INFO - 生成Markdown摘要：summary.md
+2025-03-03 15:12:00,711 - ReportGen - INFO - 报告已保存至：D:\codeguardian\core\reports

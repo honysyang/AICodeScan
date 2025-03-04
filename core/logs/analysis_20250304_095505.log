@@ -1,0 +1,21 @@
+2025-03-04 09:55:05,887 - CodeGuardian - INFO - ==================================================
+2025-03-04 09:55:05,887 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-04 09:55:05,887 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250304_095505.log
+2025-03-04 09:55:05,887 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-04 09:55:05,887 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-04 09:55:05,887 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-04 09:55:05,887 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-04 09:55:05,887 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-04 09:55:05,903 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-04 09:55:05,903 - CodeGuardian - ERROR - 分析过程中发生错误: 'description'
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 44, in analyze
+    safety_data = self._safety_analysis(context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 105, in _safety_analysis
+    local_findings = self.vuln_db.scan_code(context.processed_content)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 328, in scan_code
+    'description': pattern['description']
+                   ~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'description'

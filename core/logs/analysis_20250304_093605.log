@@ -1,0 +1,6 @@
+2025-03-04 09:36:05,411 - CodeGuardian - INFO - ==================================================
+2025-03-04 09:36:05,411 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-04 09:36:05,411 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250304_093605.log
+2025-03-04 09:36:05,411 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-04 09:36:05,411 - VulnerabilityDB - ERROR - Invalid regex pattern for CWE-401: (malloc|calloc|realloc)\s*\$.*\$\s*;\s*(?!free\s*\())
+2025-03-04 09:36:05,411 - VulnerabilityDB - ERROR - Failed to load vulnerability database: Invalid regex pattern for CWE-401: unbalanced parenthesis at position 52

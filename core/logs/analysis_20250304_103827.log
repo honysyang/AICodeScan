@@ -1,0 +1,58 @@
+2025-03-04 10:38:27,485 - CodeGuardian - INFO - ==================================================
+2025-03-04 10:38:27,493 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-04 10:38:27,494 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250304_103827.log
+2025-03-04 10:38:27,494 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-04 10:38:27,495 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-04 10:38:27,496 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-04 10:38:27,498 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-04 10:38:27,498 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-04 10:38:27,498 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-04 10:38:27,498 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 10:38:27,498 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 10:38:30,650 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 10:38:30,657 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-04 10:38:30,657 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 10:38:30,657 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 10:38:34,039 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 10:38:34,286 - CodeGuardian - INFO - Generating visualizations...
+2025-03-04 10:38:34,678 - CodeGuardian - ERROR - 生成调用关系图失败: Failed to generate call graph: Command '[WindowsPath('dot'), '-Kdot', '-Tpng', '-O', 'call_graph.gv']' returned non-zero exit status 1. [stderr: b'Error: Could not open "call_graph.gv.png" for writing : Permission denied\r\n']
+Traceback (most recent call last):
+  File "D:\codeguardian\.venv\Lib\site-packages\graphviz\backend\execute.py", line 88, in run_check
+    proc.check_returncode()
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 502, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command '[WindowsPath('dot'), '-Kdot', '-Tpng', '-O', 'call_graph.gv']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\visualizer.py", line 22, in generate_call_graph
+    dot.render('reports/call_graph.gv', format='png')
+  File "D:\codeguardian\.venv\Lib\site-packages\graphviz\_tools.py", line 171, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\graphviz\rendering.py", line 122, in render
+    rendered = self._render(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\graphviz\_tools.py", line 171, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\graphviz\backend\rendering.py", line 326, in render
+    execute.run_check(cmd,
+  File "D:\codeguardian\.venv\Lib\site-packages\graphviz\backend\execute.py", line 90, in run_check
+    raise CalledProcessError(*e.args)
+graphviz.backend.execute.CalledProcessError: Command '[WindowsPath('dot'), '-Kdot', '-Tpng', '-O', 'call_graph.gv']' returned non-zero exit status 1. [stderr: b'Error: Could not open "call_graph.gv.png" for writing : Permission denied\r\n']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 298, in _generate_visualization
+    call_graph = CodeVisualizer.generate_call_graph(report)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\visualizer.py", line 25, in generate_call_graph
+    raise RuntimeError(f"Failed to generate call graph: {str(e)}")
+RuntimeError: Failed to generate call graph: Command '[WindowsPath('dot'), '-Kdot', '-Tpng', '-O', 'call_graph.gv']' returned non-zero exit status 1. [stderr: b'Error: Could not open "call_graph.gv.png" for writing : Permission denied\r\n']
+2025-03-04 10:38:35,210 - ReportGen - INFO - 生成规范化报告...
+2025-03-04 10:38:35,220 - ReportGen - INFO - []
+2025-03-04 10:38:35,220 - ReportGen - INFO - 生成Markdown摘要：summary.md
+2025-03-04 10:38:35,225 - ReportGen - INFO - 报告已保存至：D:\codeguardian\core\reports

@@ -1,0 +1,16 @@
+2025-03-03 14:23:31,278 - CodeGuardian - INFO - ==================================================
+2025-03-03 14:23:31,282 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-03 14:23:31,282 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250303_142331.log
+2025-03-03 14:23:31,282 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-03 14:23:31,286 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-03 14:23:31,286 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-03 14:23:31,286 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-03 14:23:31,286 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-03 14:23:31,290 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-03 14:23:31,294 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 14:23:31,294 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 14:23:34,334 - httpx - INFO - HTTP Request: POST https://vip.apiyi.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 14:23:34,350 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-03 14:23:34,350 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 14:23:34,350 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 14:23:44,903 - httpx - INFO - HTTP Request: POST https://vip.apiyi.com/v1/chat/completions "HTTP/1.1 200 OK"

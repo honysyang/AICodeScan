@@ -1,0 +1,42 @@
+2025-03-03 14:18:19,245 - CodeGuardian - INFO - ==================================================
+2025-03-03 14:18:19,246 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-03 14:18:19,247 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250303_141819.log
+2025-03-03 14:18:19,247 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-03 14:18:19,248 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-03 14:18:19,249 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-03 14:18:19,249 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-03 14:18:19,250 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-03 14:18:19,253 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-03 14:18:19,254 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 14:18:19,255 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 14:18:19,850 - httpx - INFO - HTTP Request: POST https://vip.apiyi.com/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2025-03-03 14:18:19,855 - CodeGuardian - ERROR - AI analysis failed: AI分析失败: Error code: 403 - {'error': {'message': 'user [6302] quota [21895] preConsumedQuota [27305] is not enough', 'localized_message': '用户余额不足, 请充值', 'type': 'shell_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 175, in _analyze_with_openai
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 879, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1296, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 973, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1077, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.PermissionDeniedError: Error code: 403 - {'error': {'message': 'user [6302] quota [21895] preConsumedQuota [27305] is not enough', 'localized_message': '用户余额不足, 请充值', 'type': 'shell_api_error', 'param': '', 'code': 'insufficient_user_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 162, in _call_ai_engine
+    return self._analyze_with_openai(prompt, code, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 189, in _analyze_with_openai
+    raise RuntimeError(f"AI分析失败: {str(e)}")
+RuntimeError: AI分析失败: Error code: 403 - {'error': {'message': 'user [6302] quota [21895] preConsumedQuota [27305] is not enough', 'localized_message': '用户余额不足, 请充值', 'type': 'shell_api_error', 'param': '', 'code': 'insufficient_user_quota'}}

@@ -1,0 +1,22 @@
+2025-03-04 11:12:11,980 - CodeGuardian - INFO - ==================================================
+2025-03-04 11:12:11,980 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-04 11:12:11,982 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250304_111211.log
+2025-03-04 11:12:11,982 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-04 11:12:11,982 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-04 11:12:11,983 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-04 11:12:11,984 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-04 11:12:11,984 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-04 11:12:11,986 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-04 11:12:11,987 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 11:12:11,987 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 11:12:17,165 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 11:12:17,165 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-04 11:12:17,165 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 11:12:17,165 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 11:12:20,636 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 11:12:20,638 - CodeGuardian - ERROR - 分析过程中发生错误: AnalysisResult.__init__() missing 1 required positional argument: 'visualization'
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 51, in analyze
+    return AnalysisResult(
+           ^^^^^^^^^^^^^^^
+TypeError: AnalysisResult.__init__() missing 1 required positional argument: 'visualization'

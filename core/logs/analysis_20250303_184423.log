@@ -1,0 +1,24 @@
+2025-03-03 18:44:23,521 - CodeGuardian - INFO - ==================================================
+2025-03-03 18:44:23,521 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-03 18:44:23,523 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250303_184423.log
+2025-03-03 18:44:23,524 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-03 18:44:23,524 - VulnerabilityDB - INFO - Loaded 4 CWE patterns
+2025-03-03 18:44:23,525 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-03 18:44:23,526 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-03 18:44:23,526 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-03 18:44:23,528 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-03 18:44:23,529 - VulnerabilityDB - ERROR - 正则表达式解析失败: unbalanced parenthesis at position 52 (CWE: CWE-401, 模式: (malloc|calloc|realloc)\s*\$.*\$\s*;\s*(?!free\s*\()))
+2025-03-03 18:44:23,530 - VulnerabilityDB - ERROR - 正则表达式解析失败: unbalanced parenthesis at position 81 (CWE: CWE-404, 模式: (fopen|socket|pthread_create)\s*\$.*\$\s*;\s*(?!(fclose|close|pthread_join)\s*\()))
+2025-03-03 18:44:23,530 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 18:44:23,530 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 18:44:25,742 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 18:44:25,752 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-03 18:44:25,752 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 18:44:25,752 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 18:44:31,360 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 18:44:31,362 - CodeGuardian - ERROR - 分析过程中发生错误: 'CodeGuardian' object has no attribute '_generate_visualization'
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 47, in analyze
+    viz_html = self._generate_visualization(safety_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CodeGuardian' object has no attribute '_generate_visualization'

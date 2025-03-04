@@ -1,0 +1,20 @@
+2025-03-03 14:24:37,144 - CodeGuardian - INFO - ==================================================
+2025-03-03 14:24:37,144 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-03 14:24:37,144 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250303_142437.log
+2025-03-03 14:24:37,144 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-03 14:24:37,148 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-03 14:24:37,148 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-03 14:24:37,152 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-03 14:24:37,152 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-03 14:24:37,156 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-03 14:24:37,156 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 14:24:37,156 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 14:24:46,163 - httpx - INFO - HTTP Request: POST https://vip.apiyi.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 14:24:46,171 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-03 14:24:46,175 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 14:24:46,175 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 14:24:59,064 - httpx - INFO - HTTP Request: POST https://vip.apiyi.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 14:24:59,068 - CodeGuardian - INFO - 跳过可视化生成（Graphviz不可用）
+2025-03-03 14:24:59,068 - ReportGen - INFO - Generating reports...
+2025-03-03 14:24:59,084 - ReportGen - INFO - Generated summary.md
+2025-03-03 14:24:59,088 - ReportGen - INFO - Reports saved to D:\codeguardian\core\reports

@@ -1,0 +1,36 @@
+2025-03-03 14:19:33,850 - CodeGuardian - INFO - ==================================================
+2025-03-03 14:19:33,851 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-03 14:19:33,851 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250303_141933.log
+2025-03-03 14:19:33,852 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-03 14:19:33,852 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-03 14:19:33,853 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-03 14:19:33,853 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-03 14:19:33,854 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-03 14:19:33,856 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-03 14:19:33,857 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 14:19:33,857 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 14:19:37,784 - httpx - INFO - HTTP Request: POST https://vip.apiyi.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 14:19:37,789 - CodeGuardian - ERROR - AI analysis failed: AI分析失败: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 187, in _analyze_with_openai
+    return json.loads(response.choices[0].message.content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 162, in _call_ai_engine
+    return self._analyze_with_openai(prompt, code, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 189, in _analyze_with_openai
+    raise RuntimeError(f"AI分析失败: {str(e)}")
+RuntimeError: AI分析失败: Expecting value: line 1 column 1 (char 0)

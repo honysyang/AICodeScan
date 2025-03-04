@@ -1,0 +1,20 @@
+2025-03-04 09:59:18,723 - CodeGuardian - INFO - ==================================================
+2025-03-04 09:59:18,723 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-04 09:59:18,723 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250304_095918.log
+2025-03-04 09:59:18,723 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-04 09:59:18,723 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-04 09:59:18,723 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-04 09:59:18,723 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-04 09:59:18,723 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-04 09:59:18,723 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-04 09:59:18,723 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 09:59:18,723 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 09:59:20,972 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 09:59:21,009 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-04 09:59:21,009 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 09:59:21,009 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 09:59:26,511 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 09:59:26,544 - CodeGuardian - ERROR - Visualization dependencies not found: attempted relative import with no known parent package
+2025-03-04 09:59:26,544 - ReportGen - INFO - 生成规范化报告...
+2025-03-04 09:59:26,544 - ReportGen - INFO - 生成Markdown摘要：summary.md
+2025-03-04 09:59:26,555 - ReportGen - INFO - 报告已保存至：D:\codeguardian\core\reports

@@ -1,0 +1,29 @@
+{
+  "exploit_chain": {
+    "entry_points": [
+      "bar@L5"
+    ],
+    "shellcode": {
+      "constraints": {
+        "bad_chars": [
+          "0x00",
+          "0x0A"
+        ],
+        "max_size": 256
+      },
+      "type": "staged"
+    },
+    "techniques": [
+      {
+        "description": "基于缓冲区溢出的控制流劫持",
+        "mitre_id": "T1203",
+        "probability": 0.9,
+        "steps": [
+          "构造超长输入覆盖返回地址",
+          "利用溢出控制程序流"
+        ]
+      }
+    ]
+  },
+  "mitigations": []
+}

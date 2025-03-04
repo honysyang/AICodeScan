@@ -1,0 +1,26 @@
+2025-03-04 11:10:03,888 - CodeGuardian - INFO - ==================================================
+2025-03-04 11:10:03,890 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-04 11:10:03,890 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250304_111003.log
+2025-03-04 11:10:03,890 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-04 11:10:03,890 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-04 11:10:03,890 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-04 11:10:03,890 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-04 11:10:03,890 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-04 11:10:03,890 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-04 11:10:03,898 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 11:10:03,898 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 11:10:07,066 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 11:10:07,075 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-04 11:10:07,075 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 11:10:07,075 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 11:10:17,910 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 11:10:18,169 - CodeGuardian - INFO - Generating visualizations...
+2025-03-04 11:10:18,169 - CodeGuardian - ERROR - 生成调用关系图失败: type object 'CodeVisualizer' has no attribute 'generate_call_graph'
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 299, in _generate_visualization
+    call_graph = CodeVisualizer.generate_call_graph(report)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'CodeVisualizer' has no attribute 'generate_call_graph'
+2025-03-04 11:10:18,537 - ReportGen - INFO - 生成规范化报告...
+2025-03-04 11:10:18,537 - ReportGen - INFO - 生成Markdown摘要：summary.md
+2025-03-04 11:10:18,537 - ReportGen - INFO - 报告已保存至：D:\codeguardian\core\reports

@@ -1,0 +1,47 @@
+2025-03-04 10:17:31,216 - CodeGuardian - INFO - ==================================================
+2025-03-04 10:17:31,216 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-04 10:17:31,216 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250304_101731.log
+2025-03-04 10:17:31,216 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-04 10:17:31,216 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-04 10:17:31,232 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-04 10:17:31,232 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-04 10:17:31,232 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-04 10:17:31,235 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-04 10:17:31,236 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 10:17:31,236 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 10:17:34,020 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 10:17:34,028 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-04 10:17:34,029 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 10:17:34,029 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 10:17:37,974 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 10:17:38,179 - CodeGuardian - INFO - Generating visualizations...
+2025-03-04 10:17:38,770 - CodeGuardian - ERROR - 生成风险分布图失败: 生成风险分布图失败: Value of 'values' is not the name of a column in 'data_frame'. Expected one of ['cwe_id', 'type', 'description'] but received: severity
+Traceback (most recent call last):
+  File "D:\codeguardian\core\visualizer.py", line 38, in generate_risk_map
+    fig = px.treemap(
+          ^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\plotly\express\_chart_types.py", line 1812, in treemap
+    return make_figure(
+           ^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\plotly\express\_core.py", line 2477, in make_figure
+    args = build_dataframe(args, constructor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\plotly\express\_core.py", line 1727, in build_dataframe
+    df_output, wide_id_vars = process_args_into_dataframe(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\plotly\express\_core.py", line 1328, in process_args_into_dataframe
+    raise ValueError(err_msg)
+ValueError: Value of 'values' is not the name of a column in 'data_frame'. Expected one of ['cwe_id', 'type', 'description'] but received: severity
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 297, in _generate_visualization
+    risk_map = CodeVisualizer.generate_risk_map(report)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\visualizer.py", line 50, in generate_risk_map
+    raise RuntimeError(f"生成风险分布图失败: {str(e)}")
+RuntimeError: 生成风险分布图失败: Value of 'values' is not the name of a column in 'data_frame'. Expected one of ['cwe_id', 'type', 'description'] but received: severity
+2025-03-04 10:17:38,770 - ReportGen - INFO - 生成规范化报告...
+2025-03-04 10:17:38,770 - ReportGen - INFO - 生成Markdown摘要：summary.md
+2025-03-04 10:17:38,786 - ReportGen - INFO - 报告已保存至：D:\codeguardian\core\reports

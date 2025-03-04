@@ -1,0 +1,22 @@
+2025-03-03 18:57:42,001 - CodeGuardian - INFO - ==================================================
+2025-03-03 18:57:42,001 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-03 18:57:42,002 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250303_185742.log
+2025-03-03 18:57:42,002 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-03 18:57:42,003 - VulnerabilityDB - INFO - Loaded 4 CWE patterns
+2025-03-03 18:57:42,004 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-03 18:57:42,005 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-03 18:57:42,005 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-03 18:57:42,007 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-03 18:57:42,008 - VulnerabilityDB - ERROR - 正则表达式解析失败: unbalanced parenthesis at position 52 (CWE: CWE-401, 模式: (malloc|calloc|realloc)\s*\$.*\$\s*;\s*(?!free\s*\()))
+2025-03-03 18:57:42,009 - VulnerabilityDB - ERROR - 正则表达式解析失败: unbalanced parenthesis at position 81 (CWE: CWE-404, 模式: (fopen|socket|pthread_create)\s*\$.*\$\s*;\s*(?!(fclose|close|pthread_join)\s*\()))
+2025-03-03 18:57:42,010 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 18:57:42,010 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 18:57:47,647 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 18:57:47,657 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-03 18:57:47,657 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-03 18:57:47,658 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-03 18:57:52,538 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 18:57:52,540 - CodeGuardian - ERROR - Visualization dependencies not found: attempted relative import with no known parent package
+2025-03-03 18:57:52,541 - ReportGen - INFO - 生成规范化报告...
+2025-03-03 18:57:52,547 - ReportGen - INFO - 生成Markdown摘要：summary.md
+2025-03-03 18:57:52,550 - ReportGen - INFO - 报告已保存至：D:\codeguardian\core\reports

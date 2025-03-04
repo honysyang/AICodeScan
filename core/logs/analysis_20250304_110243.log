@@ -1,0 +1,294 @@
+2025-03-04 11:02:43,841 - CodeGuardian - INFO - ==================================================
+2025-03-04 11:02:43,841 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-04 11:02:43,842 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250304_110243.log
+2025-03-04 11:02:43,842 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-04 11:02:43,842 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-04 11:02:43,843 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-04 11:02:43,843 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-04 11:02:43,843 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-04 11:02:43,845 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-04 11:02:43,845 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 11:02:43,846 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 11:02:49,497 - openai._base_client - INFO - Retrying request to /chat/completions in 0.401426 seconds
+2025-03-04 11:02:54,920 - openai._base_client - INFO - Retrying request to /chat/completions in 0.832769 seconds
+2025-03-04 11:03:00,755 - CodeGuardian - ERROR - OpenAI API调用失败: Request timed out.
+Traceback (most recent call last):
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\http_proxy.py", line 316, in handle_request
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\http11.py", line 376, in start_tls
+    return self._stream.start_tls(ssl_context, server_hostname, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(value)
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: _ssl.c:983: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1009, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(value)
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: _ssl.c:983: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 162, in _analyze_with_openai
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 879, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1296, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 973, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1018, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1111, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1018, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1111, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1028, in _request
+    raise APITimeoutError(request=request) from err
+openai.APITimeoutError: Request timed out.
+2025-03-04 11:03:00,772 - CodeGuardian - ERROR - AI analysis failed: AI分析失败: Request timed out.
+Traceback (most recent call last):
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\http_proxy.py", line 316, in handle_request
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\http11.py", line 376, in start_tls
+    return self._stream.start_tls(ssl_context, server_hostname, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(value)
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: _ssl.c:983: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1009, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(value)
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: _ssl.c:983: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 162, in _analyze_with_openai
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 879, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1296, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 973, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1018, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1111, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1018, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1111, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1028, in _request
+    raise APITimeoutError(request=request) from err
+openai.APITimeoutError: Request timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 147, in _call_ai_engine
+    return self._analyze_with_openai(prompt, code, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 174, in _analyze_with_openai
+    raise RuntimeError(f"AI分析失败: {str(e)}")
+RuntimeError: AI分析失败: Request timed out.
+2025-03-04 11:03:00,792 - CodeGuardian - ERROR - 分析过程中发生错误: AI分析失败: Request timed out.
+Traceback (most recent call last):
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\http_proxy.py", line 316, in handle_request
+    stream = stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_sync\http11.py", line 376, in start_tls
+    return self._stream.start_tls(ssl_context, server_hostname, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 154, in start_tls
+    with map_exceptions(exc_map):
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(value)
+  File "D:\codeguardian\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: _ssl.c:983: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1009, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Users\zhongjie_yang\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(value)
+  File "D:\codeguardian\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: _ssl.c:983: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 162, in _analyze_with_openai
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_utils\_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 879, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1296, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 973, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1018, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1111, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1018, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1111, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\codeguardian\.venv\Lib\site-packages\openai\_base_client.py", line 1028, in _request
+    raise APITimeoutError(request=request) from err
+openai.APITimeoutError: Request timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 48, in analyze
+    safety_data = self._safety_analysis(context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 115, in _safety_analysis
+    ai_report = self._call_ai_engine(
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 147, in _call_ai_engine
+    return self._analyze_with_openai(prompt, code, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codeguardian\core\analyzer.py", line 174, in _analyze_with_openai
+    raise RuntimeError(f"AI分析失败: {str(e)}")
+RuntimeError: AI分析失败: Request timed out.

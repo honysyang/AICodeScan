@@ -1,0 +1,24 @@
+2025-03-04 10:37:45,859 - CodeGuardian - INFO - ==================================================
+2025-03-04 10:37:45,860 - CodeGuardian - INFO - Initializing CodeGuardian Analyzer
+2025-03-04 10:37:45,860 - CodeGuardian - INFO - Log file: D:\codeguardian\core\logs\analysis_20250304_103745.log
+2025-03-04 10:37:45,861 - VulnerabilityDB - INFO - Loading vulnerability patterns...
+2025-03-04 10:37:45,862 - VulnerabilityDB - INFO - Loaded 2 CWE patterns
+2025-03-04 10:37:45,862 - VulnerabilityDB - INFO - Loaded 1 mitigation methods
+2025-03-04 10:37:45,862 - CodeGuardian - INFO - Loading code file: C:\Users\zhongjie_yang\Desktop\vul1.c
+2025-03-04 10:37:45,863 - CodeGuardian - INFO - File loaded successfully. Size: 390 characters
+2025-03-04 10:37:45,864 - CodeGuardian - INFO - Extracted 3 functions
+2025-03-04 10:37:45,866 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 10:37:45,866 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 10:37:50,171 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 10:37:50,176 - CodeGuardian - INFO - Merging local and AI analysis results
+2025-03-04 10:37:50,176 - CodeGuardian - INFO - Initiating AI analysis...
+2025-03-04 10:37:50,177 - CodeGuardian - INFO - Using OpenAI API for analysis
+2025-03-04 10:37:53,927 - httpx - INFO - HTTP Request: POST https://api.chatanywhere.tech/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-04 10:37:54,221 - CodeGuardian - INFO - Generating visualizations...
+2025-03-04 10:37:55,340 - ReportGen - INFO - 生成规范化报告...
+2025-03-04 10:37:55,343 - ReportGen - ERROR - 报告生成失败: name 'log' is not defined
+Traceback (most recent call last):
+  File "D:\codeguardian\core\analyzer.py", line 413, in save
+    log.info(report.attack_report.get('mitre_id',[]) and report.attack_report.get('technique',[]) and report.attack_report.get('probability',[])   )
+    ^^^
+NameError: name 'log' is not defined

@@ -1,0 +1,5 @@
+digraph {
+	bar [label=bar]
+	foo [label=foo]
+	main [label=main]
+}
